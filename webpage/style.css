@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+body {
+    background-color: azure;
+    font-family: 'Quicksand', sans-serif;
+    font-size: large;
+    align-content: center;
+    background-color: #e7e7e7;
+
+
+}
+
+.main {
+    padding: 2%;
+    margin: 0 auto;
+    margin-top: 5%;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    text-align: center;
+    width: 75%;
+    background-color: white;
+}
+
+ul.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e0e0;
+    width: 100%; 
+}
+
+li.nav-item {
+    margin: 0 10px; 
+}
+
+li.nav-item a {
+    display: block;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+li.nav-item a:hover {
+    background-color: #c9c9c9;
+}
+
+.text{
+    padding-top: 50px;
+    margin: auto;
+    width: 90%;
+    text-align: left;
+    padding-left: 10px;
+}
+    
+button {
+    background-color: #d3d3d3;
+    color: #fff;
+    padding: 10px 100px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: large;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    margin-top: 20px;
+    
+}
+  
+button:hover {
+  background-color: #838383;
+}
+
+
+form {
+    text-align: left;
+    padding: 20px;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+form input[type="text"],
+form textarea,
+form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #d3d3d3;
+    border-radius: 4px;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button {
+    background-color: #d3d3d3;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: large;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    margin-top: 20px;
+}
+
+form button:hover {
+    background-color: #838383;
+}
+
+#sections textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #d3d3d3;
+    border-radius: 4px;
+    resize: vertical;
+}

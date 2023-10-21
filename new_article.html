@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ADMIN PAGE</title>
+  <link rel="stylesheet" href="/?file=style.css">
+</head>
+<body>
+    <main class="main">
+        <h1>Nouvel Article</h1>
+        <h2>CoCo_Sol</h2>
+        <form method="POST" action="/new_article">
+            <label for="articleTitle">Titre de l'article:</label>
+            <input placeholder="Titre" type="text" id="articleTitle" name="articleTitle" required>
+
+            <label for="articleImage">Image:</label>
+            <input type="file" id="articleImage" name="articleImage" accept="image/*">
+
+            <label for="articleContent">Contenu de l'article:</label>
+            <textarea placeholder="Intro..." id="Intro" name="introContent" rows="5" required></textarea>
+
+            <div id="sections">
+                <!-- Les sections de texte seront ajoutées ici -->
+            </div>
+
+            <button type="button" onclick="addSection()" class="admin-button">Ajouter une section</button>
+            
+            <br>
+            
+            <button type="submit" class="admin-button">Enregistrer l'article</button> 
+
+        </form>
+    </main>
+
+    <script>
+        function addSection() {
+            const sections = document.getElementById("sections");
+            const titlenewSection = document.createElement("input");
+            titlenewSection.name = "articleSection";
+            titlenewSection.type="text"
+            titlenewSection.placeholder = "title";
+            const newSection = document.createElement("textarea");
+            newSection.rows = "3";
+            newSection.name = "articleSection";
+            newSection.placeholder = "New part...";
+            sections.appendChild(titlenewSection);
+            sections.appendChild(newSection);
+        }
+    </script>
+</body>
+</html>
