@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>ADMIN PAGE</title>
-  <link rel="stylesheet" href="/?file=style.css">
+    <title>ADMIN PAGE</title>
+    <link rel="stylesheet" href="/?file=style.css">
 </head>
+
 <body>
     <main class="main">
         <h1>Nouvel Article</h1>
@@ -23,10 +25,10 @@
             </div>
 
             <button type="button" onclick="addSection()" class="admin-button">Ajouter une section</button>
-            
+
             <br>
-            
-            <button type="submit" class="admin-button">Enregistrer l'article</button> 
+
+            <button type="submit" class="admin-button">Enregistrer l'article</button>
 
         </form>
     </main>
@@ -36,7 +38,7 @@
             const sections = document.getElementById("sections");
             const titlenewSection = document.createElement("input");
             titlenewSection.name = "articleSection";
-            titlenewSection.type="text"
+            titlenewSection.type = "text"
             titlenewSection.placeholder = "title";
             const newSection = document.createElement("textarea");
             newSection.rows = "3";
@@ -47,4 +49,5 @@
         }
     </script>
 </body>
+
 </html>
