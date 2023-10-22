@@ -20,6 +20,33 @@
         <h1>CoCo Sol</h1>
         <h2>Articles</h2>
 
+        <div id="articles">
+            <script>
+                fetch('/data')
+                    .then(response => response.json())
+                    .then(data => {
+                        data.forEach(article => {
+                            const place = document.getElementById('articles');
+                            articleButton = document.createElement('button');
+                            title = document.createElement('h3');
+                            title.textContent = article.title;
+                            articleButton.classList.add('article-button');
+                            articleButton.appendChild(title)
+
+                            articleButton.addEventListener('click', function () {
+                                window.location.href = '/article/' + article.id;
+                            });
+
+                            articleButton.appendChild(document.createTextNode("aaaaaaaaaaaaaaaaaaa"));
+                            place.appendChild(articleButton);
+                        });
+                    })
+                    .catch(error => {
+                        console.error("Une erreur s'est produite :", error);
+                    });
+            </script>
+        </div>
+
     </main>
 </body>
 

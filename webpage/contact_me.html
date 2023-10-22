@@ -20,6 +20,26 @@
         <h1>CoCo Sol</h1>
         <h2>Contact me</h2>
 
+        <p class="article">
+            if you want to contact me, please use the form below.
+        </p>
+
+        <form action="/contact_me" method="POST">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+
+            <label for="subject">Subject</label>
+            <input type="text" name="subject" id="subject">
+
+            <label for="message">Message</label>
+            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+
+            <input class="button-teq" type="submit" value="Send">
+        </form>
+
     </main>
 </body>
 

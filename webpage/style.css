@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 body {
     background-color: azure;
     font-family: 'Quicksand', sans-serif;
     font-size: large;
     align-content: center;
     background-color: #e7e7e7;
-
+    background-image: url('?file=wave.svg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
 }
 
@@ -13,7 +17,7 @@ body {
     padding: 2%;
     margin: 0 auto;
     margin-top: 5%;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     text-align: center;
     width: 75%;
@@ -27,12 +31,12 @@ ul.navbar {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #e0e0e0;
-    width: 100%; 
+    background-color: hsla(203, 95%, 77%, 0.315);
+    width: 100%;
 }
 
 li.nav-item {
-    margin: 0 10px; 
+    margin: 0 10px;
 }
 
 li.nav-item a {
@@ -44,18 +48,18 @@ li.nav-item a {
 }
 
 li.nav-item a:hover {
-    background-color: #c9c9c9;
+    background-color: hsla(203, 95%, 77%, 0.61);
 }
 
-.text{
+.text {
     padding-top: 50px;
     margin: auto;
     width: 90%;
     text-align: left;
     padding-left: 10px;
 }
-    
-button {
+
+.button-teq {
     background-color: #d3d3d3;
     color: #fff;
     padding: 10px 100px;
@@ -66,11 +70,11 @@ button {
     font-weight: 600;
     transition: background-color 0.2s;
     margin-top: 20px;
-    
+
 }
-  
-button:hover {
-  background-color: #838383;
+
+.button-teq:hover {
+    background-color: #838383;
 }
 
 
@@ -86,6 +90,7 @@ form label {
 }
 
 form input[type="text"],
+form input[type="email"],
 form textarea,
 form input[type="file"] {
     width: 100%;
@@ -97,6 +102,21 @@ form input[type="file"] {
 
 form textarea {
     resize: vertical;
+}
+
+
+.article {
+    margin: auto;
+    margin-top: 10px;
+    width: 90%;
+    text-align: left;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background: #f3f3f3;
+
 }
 
 form button {
@@ -123,4 +143,29 @@ form button:hover {
     border: 1px solid #d3d3d3;
     border-radius: 4px;
     resize: vertical;
+}
+
+.article-button {
+    border-width: 1px;
+    border-bottom: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: Arial;
+    width: 90%;
+    border-color: #000000;
+    /* Bordure de bouton de la même couleur que le texte */
+    transition: 100ms;
+    background: #fff;
+    /* Fond de bouton blanc */
+    color: #000000;
+    /* Texte plus clair */
+}
+
+.article-button:hover {
+    width: 95%;
+    background: #f0f0f0;
+    /* Fond de bouton légèrement plus foncé au survol */
 }
