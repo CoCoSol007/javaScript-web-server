@@ -7,10 +7,18 @@
 </head>
 
 <body>
+    <nav>
+        <ul class="navbar">
+            <li class="nav-item"><a href="/?file=main.html">Home</a></li>
+            <li class="nav-item"><a href="/?file=articles.html">Articles</a></li>
+            <li class="nav-item"><a href="/?file=about_me.html">About me</a></li>
+            <li class="nav-item"><a href="/?file=contact_me.html">Contact me</a></li>
+        </ul>
+    </nav>
     <main class="main">
         <h1>Nouvel Article</h1>
         <h2>CoCo_Sol</h2>
-        <form method="POST" action="/new_article">
+        <form method="POST" action="/admin/new_article">
             <label for="articleTitle">Titre de l'article:</label>
             <input placeholder="Titre" type="text" id="articleTitle" name="articleTitle" required>
 
