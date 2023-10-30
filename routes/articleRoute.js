@@ -6,26 +6,26 @@ const fs = require('fs');
 
 
 router.get("/:id", (req, res) => {
-    const articleId = req.params.id;
-  
-    fs.readFile("routes/data/data.json", "utf8", (err, data) => {
-      if (err) {
-        console.error("Erreur de lecture du fichier de données :", err);
-        res.status(500).send("Erreur interne du serveur");
-        return;
-      }
-      const jsonData = JSON.parse(data);
-      const article = jsonData.find(entry => entry.id == articleId);
-      if (article == undefined) {
-        res.redirect("/?file=page_not_found.html");
-        return;
-      }
-      if (article.text === undefined ){
-        article.text = [""]
-      }
-      const formattedText = article.text.map(element => `\`${element}\``);
-  
-      const htmlContent = `
+  const articleId = req.params.id;
+
+  fs.readFile("routes/data/data.json", "utf8", (err, data) => {
+    if (err) {
+      console.error("Erreur de lecture du fichier de données :", err);
+      res.status(500).send("Erreur interne du serveur");
+      return;
+    }
+    const jsonData = JSON.parse(data);
+    const article = jsonData.find(entry => entry.id == articleId);
+    if (article == undefined) {
+      res.redirect("/?file=page_not_found.html");
+      return;
+    }
+    if (article.text === undefined) {
+      article.text = [""]
+    }
+    const formattedText = article.text.map(element => `\`${element}\``);
+
+    const htmlContent = `
         <!DOCTYPE html>
         <html>
         <head>
@@ -67,13 +67,14 @@ router.get("/:id", (req, res) => {
                     }
                 </script>
             </main>
+                <a href="https://www.digitalocean.com/?refcode=6d089c7c6c04&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge"><img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt="DigitalOcean Referral Badge" /></a>
         </body>
         </html>
       `;
-  
-      res.send(htmlContent);
-    });
+
+    res.send(htmlContent);
   });
+});
 
 // Exportez le router pour l'utiliser dans d'autres fichiers
 module.exports = router;
