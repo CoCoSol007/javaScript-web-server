@@ -24,6 +24,14 @@ body {
     background-color: white;
 }
 
+.sponsor {
+    padding: 2%;
+    margin: 0 auto;
+    margin-top: 5%;
+    text-align: center;
+    width: 75%;
+}
+
 ul.navbar {
     list-style-type: none;
     margin: 0;
@@ -45,6 +53,12 @@ li.nav-item a {
     text-decoration: none;
     text-align: center;
     padding: 14px 16px;
+}
+
+.article a {
+    color: blue;
+    text-decoration: none;
+    margin-bottom: 15px;
 }
 
 li.nav-item a:hover {

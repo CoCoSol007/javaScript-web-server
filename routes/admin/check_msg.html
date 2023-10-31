@@ -12,62 +12,62 @@
         <ul class="navbar">
             <li class="nav-item"><a href="/?file=main.html">Home</a></li>
             <li class="nav-item"><a href="/?file=articles.html">Articles</a></li>
+            <li class="nav-item"><a href="/?file=photo.html">Photo</a></li>
             <li class="nav-item"><a href="/?file=about_me.html">About me</a></li>
-            <li class="nav-item"><a href="/?file=contact_me.html">Contact me</a></li>
         </ul>
     </nav>
     <main class="main">
         <h2>ADMIN PAGE MESSAGES</h2>
         <div id='msg-container'></div>
-<script>
-    fetch('/admin/msg-data')
-        .then(response => response.json())
-        .then(data => {
-            const msgContainer = document.getElementById('msg-container');
-            data.forEach(msg => {
-                // Crée un div pour afficher les détails du message
-                const messageDiv = document.createElement('div');
+        <script>
+            fetch('/admin/msg-data')
+                .then(response => response.json())
+                .then(data => {
+                    const msgContainer = document.getElementById('msg-container');
+                    data.forEach(msg => {
+                        // Crée un div pour afficher les détails du message
+                        const messageDiv = document.createElement('div');
 
-                messageDiv.classList.add("article")
+                        messageDiv.classList.add("article")
 
-                // Affiche les propriétés du message
-                const nameParagraph = document.createElement('p');
-                nameParagraph.textContent = `Name: ${msg.name}`;
+                        // Affiche les propriétés du message
+                        const nameParagraph = document.createElement('p');
+                        nameParagraph.textContent = `Name: ${msg.name}`;
 
-                const emailParagraph = document.createElement('p');
-                emailParagraph.textContent = `Email: ${msg.email}`;
+                        const emailParagraph = document.createElement('p');
+                        emailParagraph.textContent = `Email: ${msg.email}`;
 
-                const subjectParagraph = document.createElement('p');
-                subjectParagraph.textContent = `Subject: ${msg.subject}`;
+                        const subjectParagraph = document.createElement('p');
+                        subjectParagraph.textContent = `Subject: ${msg.subject}`;
 
-                const messageParagraph = document.createElement('p');
-                messageParagraph.textContent = `Message: ${msg.message}`;
+                        const messageParagraph = document.createElement('p');
+                        messageParagraph.textContent = `Message: ${msg.message}`;
 
-                // Crée un bouton pour supprimer le message
-                const deleteButton = document.createElement('button');
-                deleteButton.textContent = 'Supprimer';
-                deleteButton.classList.add("button-teq");
-                deleteButton.addEventListener('click', () => {
-                    msgContainer.removeChild(messageDiv);
-                    // send an requet to server
-                    fetch("/admin/remove-msg/" + msg.id)
+                        // Crée un bouton pour supprimer le message
+                        const deleteButton = document.createElement('button');
+                        deleteButton.textContent = 'Supprimer';
+                        deleteButton.classList.add("button-teq");
+                        deleteButton.addEventListener('click', () => {
+                            msgContainer.removeChild(messageDiv);
+                            // send an requet to server
+                            fetch("/admin/remove-msg/" + msg.id)
+                        });
+
+                        // Ajoute les éléments au div du message
+                        messageDiv.appendChild(nameParagraph);
+                        messageDiv.appendChild(emailParagraph);
+                        messageDiv.appendChild(subjectParagraph);
+                        messageDiv.appendChild(messageParagraph);
+                        messageDiv.appendChild(deleteButton);
+
+                        // Ajoute le div du message à la balise 'msg-container'
+                        msgContainer.appendChild(messageDiv);
+                    });
+                })
+                .catch(error => {
+                    console.error("Une erreur s'est produite :", error);
                 });
-
-                // Ajoute les éléments au div du message
-                messageDiv.appendChild(nameParagraph);
-                messageDiv.appendChild(emailParagraph);
-                messageDiv.appendChild(subjectParagraph);
-                messageDiv.appendChild(messageParagraph);
-                messageDiv.appendChild(deleteButton);
-
-                // Ajoute le div du message à la balise 'msg-container'
-                msgContainer.appendChild(messageDiv);
-            });
-        })
-        .catch(error => {
-            console.error("Une erreur s'est produite :", error);
-        });
-</script>
+        </script>
 
     </main>
 </body>
