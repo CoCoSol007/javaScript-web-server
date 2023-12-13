@@ -1,6 +1,6 @@
 # A simple WebSite
 
-this a is a website where you ca post article 
+this is a website where you ca, post article 
 note that it is not finished yet 
 and for now i didn't have enough time to finish it
 
